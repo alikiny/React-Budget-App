@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Filter Expense 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <form
+    className="makeStyles-form-2"
+  >
+    <WithStyles(ForwardRef(TextField))
+      defaultValue=""
+      id="outlined-start-adornment"
+      label="Text filter"
+      onChange={[Function]}
+      variant="outlined"
+    />
+    <WithStyles(ForwardRef(TextField))
+      id="outlined-start-adornment"
+      label="Sort By"
+      onChange={[Function]}
+      select={true}
+      value="Date"
+      variant="outlined"
+    >
+      <WithStyles(ForwardRef(MenuItem))
+        value="Date"
+      >
+        Date
+      </WithStyles(ForwardRef(MenuItem))>
+      <WithStyles(ForwardRef(MenuItem))
+        value="Amount"
+      >
+        Amount
+      </WithStyles(ForwardRef(MenuItem))>
+    </WithStyles(ForwardRef(TextField))>
+    <MuiPickersUtilsProvider
+      utils={[Function]}
+    >
+      <PickerWithState
+        KeyboardButtonProps={
+          Object {
+            "aria-label": "change start date",
+          }
+        }
+        allowKeyboardControl={true}
+        disableToolbar={true}
+        format="MM/dd/yyyy"
+        inputVariant="outlined"
+        invalidDateMessage="Invalid Date Format"
+        label="Start Date"
+        margin="normal"
+        maxDate={2100-01-01T00:00:00.000Z}
+        maxDateMessage="Date should not be after maximal date"
+        minDate={1900-01-01T00:00:00.000Z}
+        minDateMessage="Date should not be before minimal date"
+        onChange={[Function]}
+        openTo="date"
+        views={
+          Array [
+            "year",
+            "date",
+          ]
+        }
+      />
+      <PickerWithState
+        KeyboardButtonProps={
+          Object {
+            "aria-label": "change end date",
+          }
+        }
+        allowKeyboardControl={true}
+        disableToolbar={true}
+        format="MM/dd/yyyy"
+        inputVariant="outlined"
+        invalidDateMessage="Invalid Date Format"
+        label="End Date"
+        margin="normal"
+        maxDate={2100-01-01T00:00:00.000Z}
+        maxDateMessage="Date should not be after maximal date"
+        minDate={1900-01-01T00:00:00.000Z}
+        minDateMessage="Date should not be before minimal date"
+        onChange={[Function]}
+        openTo="date"
+        views={
+          Array [
+            "year",
+            "date",
+          ]
+        }
+      />
+    </MuiPickersUtilsProvider>
+  </form>
+  <WithStyles(ForwardRef(Button))
+    className="makeStyles-searchButton-3"
+    onClick={[Function]}
+    variant="contained"
+  >
+    Search
+  </WithStyles(ForwardRef(Button))>
+</div>
+`;

@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check if date update 1`] = `
+<ForwardRef(Modal)
+  open={true}
+>
+  <div
+    className="makeStyles-paper-1"
+  >
+    <WithStyles(ForwardRef(TextField))
+      id="item-name"
+      label="Name"
+      onChange={[Function]}
+      value=""
+      variant="outlined"
+    />
+    <WithStyles(ForwardRef(TextField))
+      id="item-amount"
+      label="Amount"
+      onChange={[Function]}
+      value=""
+      variant="outlined"
+    />
+    <MuiPickersUtilsProvider
+      utils={[Function]}
+    >
+      <PickerWithState
+        KeyboardButtonProps={
+          Object {
+            "aria-label": "set date",
+          }
+        }
+        allowKeyboardControl={true}
+        disableToolbar={true}
+        format="MM/dd/yyyy"
+        id="item-date"
+        inputVariant="outlined"
+        invalidDateMessage="Invalid Date Format"
+        label="Date"
+        margin="normal"
+        maxDate={2100-01-01T00:00:00.000Z}
+        maxDateMessage="Date should not be after maximal date"
+        minDate={1900-01-01T00:00:00.000Z}
+        minDateMessage="Date should not be before minimal date"
+        onChange={[Function]}
+        openTo="date"
+        value="Mon Jul 20 2020 12:34:26 GMT+0300 (Eastern European Summer Time)"
+        views={
+          Array [
+            "year",
+            "date",
+          ]
+        }
+      />
+    </MuiPickersUtilsProvider>
+    <WithStyles(ForwardRef(TextField))
+      id="item-note"
+      label="Note"
+      onChange={[Function]}
+      value=""
+      variant="outlined"
+    />
+    <div>
+      <WithStyles(ForwardRef(IconButton))
+        id="save-btn"
+        onClick={[Function]}
+      >
+        <AddCircleIcon
+          className="makeStyles-addIcon-2"
+        />
+      </WithStyles(ForwardRef(IconButton))>
+      <WithStyles(ForwardRef(IconButton))
+        id="close-btn"
+        onClick={[Function]}
+      >
+        <CancelIcon
+          className="makeStyles-addIcon-2"
+        />
+      </WithStyles(ForwardRef(IconButton))>
+    </div>
+  </div>
+</ForwardRef(Modal)>
+`;
+
+exports[`Check if text update 1`] = `
+<ForwardRef(Modal)
+  open={true}
+>
+  <div
+    className="makeStyles-paper-1"
+  >
+    <WithStyles(ForwardRef(TextField))
+      id="item-name"
+      label="Name"
+      onChange={[Function]}
+      value="My test name"
+      variant="outlined"
+    />
+    <WithStyles(ForwardRef(TextField))
+      id="item-amount"
+      label="Amount"
+      onChange={[Function]}
+      value=""
+      variant="outlined"
+    />
+    <MuiPickersUtilsProvider
+      utils={[Function]}
+    >
+      <PickerWithState
+        KeyboardButtonProps={
+          Object {
+            "aria-label": "set date",
+          }
+        }
+        allowKeyboardControl={true}
+        disableToolbar={true}
+        format="MM/dd/yyyy"
+        id="item-date"
+        inputVariant="outlined"
+        invalidDateMessage="Invalid Date Format"
+        label="Date"
+        margin="normal"
+        maxDate={2100-01-01T00:00:00.000Z}
+        maxDateMessage="Date should not be after maximal date"
+        minDate={1900-01-01T00:00:00.000Z}
+        minDateMessage="Date should not be before minimal date"
+        onChange={[Function]}
+        openTo="date"
+        views={
+          Array [
+            "year",
+            "date",
+          ]
+        }
+      />
+    </MuiPickersUtilsProvider>
+    <WithStyles(ForwardRef(TextField))
+      id="item-note"
+      label="Note"
+      onChange={[Function]}
+      value=""
+      variant="outlined"
+    />
+    <div>
+      <WithStyles(ForwardRef(IconButton))
+        id="save-btn"
+        onClick={[Function]}
+      >
+        <AddCircleIcon
+          className="makeStyles-addIcon-2"
+        />
+      </WithStyles(ForwardRef(IconButton))>
+      <WithStyles(ForwardRef(IconButton))
+        id="close-btn"
+        onClick={[Function]}
+      >
+        <CancelIcon
+          className="makeStyles-addIcon-2"
+        />
+      </WithStyles(ForwardRef(IconButton))>
+    </div>
+  </div>
+</ForwardRef(Modal)>
+`;
+
+exports[`Render Edit Form 1`] = `
+<ForwardRef(Modal)
+  open={true}
+>
+  <div
+    className="makeStyles-paper-1"
+  >
+    <WithStyles(ForwardRef(TextField))
+      id="item-name"
+      label="Name"
+      onChange={[Function]}
+      variant="outlined"
+    />
+    <WithStyles(ForwardRef(TextField))
+      id="item-amount"
+      label="Amount"
+      onChange={[Function]}
+      value={50}
+      variant="outlined"
+    />
+    <MuiPickersUtilsProvider
+      utils={[Function]}
+    >
+      <PickerWithState
+        KeyboardButtonProps={
+          Object {
+            "aria-label": "set date",
+          }
+        }
+        allowKeyboardControl={true}
+        disableToolbar={true}
+        format="MM/dd/yyyy"
+        id="item-date"
+        inputVariant="outlined"
+        invalidDateMessage="Invalid Date Format"
+        label="Date"
+        margin="normal"
+        maxDate={2100-01-01T00:00:00.000Z}
+        maxDateMessage="Date should not be after maximal date"
+        minDate={1900-01-01T00:00:00.000Z}
+        minDateMessage="Date should not be before minimal date"
+        onChange={[Function]}
+        openTo="date"
+        views={
+          Array [
+            "year",
+            "date",
+          ]
+        }
+      />
+    </MuiPickersUtilsProvider>
+    <WithStyles(ForwardRef(TextField))
+      id="item-note"
+      label="Note"
+      onChange={[Function]}
+      value="Phone"
+      variant="outlined"
+    />
+    <div>
+      <WithStyles(ForwardRef(IconButton))
+        id="save-btn"
+        onClick={[Function]}
+      >
+        <Memo(AddCircleIcon)
+          className="makeStyles-addIcon-2"
+        />
+      </WithStyles(ForwardRef(IconButton))>
+      <WithStyles(ForwardRef(IconButton))
+        id="close-btn"
+        onClick={[Function]}
+      >
+        <Memo(CancelIcon)
+          className="makeStyles-addIcon-2"
+        />
+      </WithStyles(ForwardRef(IconButton))>
+    </div>
+  </div>
+</ForwardRef(Modal)>
+`;
+
+exports[`Render Expense Form 1`] = `
+<ForwardRef(Modal)
+  open={true}
+>
+  <div
+    className="makeStyles-paper-1"
+  >
+    <WithStyles(ForwardRef(TextField))
+      id="item-name"
+      label="Name"
+      onChange={[Function]}
+      value=""
+      variant="outlined"
+    />
+    <WithStyles(ForwardRef(TextField))
+      id="item-amount"
+      label="Amount"
+      onChange={[Function]}
+      value=""
+      variant="outlined"
+    />
+    <MuiPickersUtilsProvider
+      utils={[Function]}
+    >
+      <PickerWithState
+        KeyboardButtonProps={
+          Object {
+            "aria-label": "set date",
+          }
+        }
+        allowKeyboardControl={true}
+        disableToolbar={true}
+        format="MM/dd/yyyy"
+        id="item-date"
+        inputVariant="outlined"
+        invalidDateMessage="Invalid Date Format"
+        label="Date"
+        margin="normal"
+        maxDate={2100-01-01T00:00:00.000Z}
+        maxDateMessage="Date should not be after maximal date"
+        minDate={1900-01-01T00:00:00.000Z}
+        minDateMessage="Date should not be before minimal date"
+        onChange={[Function]}
+        openTo="date"
+        views={
+          Array [
+            "year",
+            "date",
+          ]
+        }
+      />
+    </MuiPickersUtilsProvider>
+    <WithStyles(ForwardRef(TextField))
+      id="item-note"
+      label="Note"
+      onChange={[Function]}
+      value=""
+      variant="outlined"
+    />
+    <div>
+      <WithStyles(ForwardRef(IconButton))
+        id="save-btn"
+        onClick={[Function]}
+      >
+        <Memo(AddCircleIcon)
+          className="makeStyles-addIcon-2"
+        />
+      </WithStyles(ForwardRef(IconButton))>
+      <WithStyles(ForwardRef(IconButton))
+        id="close-btn"
+        onClick={[Function]}
+      >
+        <Memo(CancelIcon)
+          className="makeStyles-addIcon-2"
+        />
+      </WithStyles(ForwardRef(IconButton))>
+    </div>
+  </div>
+</ForwardRef(Modal)>
+`;

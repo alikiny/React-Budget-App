@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header render correctly 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#25001b",
+      "marginBottom": "10px",
+      "padding": "10px",
+      "textAlign": "center",
+    }
+  }
+>
+  <h1
+    className="app-name"
+  >
+    Budget Management
+  </h1>
+  <div
+    className="nav-bar"
+  >
+    <NavLink
+      activeClassName="link-active"
+      exact={true}
+      to="/"
+    >
+      Home
+    </NavLink>
+    <NavLink
+      activeClassName="link-active"
+      to="/expenses"
+    >
+      Expenses
+    </NavLink>
+    <NavLink
+      activeClassName="link-active"
+      to="/incomes"
+    >
+      Incomes
+    </NavLink>
+    <NavLink
+      activeClassName="link-active"
+      to="/transactions"
+    >
+      Transactions
+    </NavLink>
+    <NavLink
+      activeClassName="link-active"
+      to="/guides"
+    >
+      Guides
+    </NavLink>
+  </div>
+</div>
+`;

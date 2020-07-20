@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render expenses list 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "color": "white",
+        "textAlign": "center",
+      }
+    }
+  >
+    <EnhancedTable
+      deleteItem={[Function]}
+      rows={
+        Array [
+          Object {
+            "amount": 550,
+            "date": 4,
+            "id": "001",
+            "name": "House rent",
+            "note": "House rent",
+          },
+          Object {
+            "amount": 450,
+            "date": 3,
+            "id": "002",
+            "name": "Car rent",
+            "note": "Car rent",
+          },
+          Object {
+            "amount": 150,
+            "date": 2,
+            "id": "003",
+            "name": "Water bill",
+            "note": "Water",
+          },
+          Object {
+            "amount": 50,
+            "date": 1,
+            "id": "004",
+            "name": "Phone bill",
+            "note": "Phone",
+          },
+        ]
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Render with empty message 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "color": "white",
+        "textAlign": "center",
+      }
+    }
+  >
+    <EnhancedTable
+      deleteItem={[Function]}
+      rows={Array []}
+    />
+  </div>
+</div>
+`;
