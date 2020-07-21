@@ -50,7 +50,7 @@ module.exports = (env) => {
 
       contentBase: path.join(__dirname, 'public'),
       compress: true,
-      port: 9000,
+      port: 4000,
       historyApiFallback: true,
       publicPath:"/dist/"
     },

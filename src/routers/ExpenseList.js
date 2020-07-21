@@ -18,6 +18,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import moment from 'moment'
 import ExpenseModal from './ExpenseForm'
+import numeral from 'numeral'
 
 
 function createExpense(id, name, amount, date, note) {
@@ -160,7 +161,8 @@ function EnhancedTable(props) {
                                         <TableCell component="th" id={labelId} scope="row" padding="none">
                                             {row.name}
                                         </TableCell>
-                                        <TableCell align="left">{row.amount}</TableCell>
+    
+                                        <TableCell align="left">{numeral(row.amount).format('$0,0.00')}</TableCell>
                                         <TableCell align="left">{newdate}</TableCell>
                                         <TableCell align="left">{row.note}</TableCell>
                                         <TableCell align="left" onClick={
