@@ -4,9 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --config=jest.config.json",
-    "start": "webpack-dev-server --open 'Google Chrome'",
+    "webpack": "webpack-dev-server --open 'Google Chrome'",
     "build:dev": "webpack",
-    "build:prod": "webpack -p --env production"
+    "build:prod": "webpack -p --env production",
+    "start":"node server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +21,9 @@
     "css-loader": "^3.5.3",
     "date-fns": "^2.14.0",
     "enzyme-to-json": "^3.5.0",
+    "express": "^4.17.1",
     "jquery": "^3.5.1",
+    "mini-css-extract-plugin": "^0.9.0",
     "moment": "^2.27.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -47,7 +50,6 @@
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "extract-text-webpack-plugin": "^3.0.2",
     "install": "^0.13.0",
     "jest": "^26.1.0",
     "npm": "^6.14.6",
