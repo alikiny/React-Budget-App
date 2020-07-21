@@ -1,2 +1,9 @@
 @import './link.scss';
-@import './appname.scss'
+@import './appname.scss';
+@import './header.scss';
+
+body{
+    background-color: #794c6c;
+    margin: 0;
+    padding: 0;
+}

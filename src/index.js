@@ -5,9 +5,8 @@ import { Provider } from 'react-redux'
 // main app
 import App from '../containers/app';
 import newStore from './redux/expensify'
-import { addExpense, removeExpense, editExpense } from './redux/expenses'
-import { datetFilter, sortFilter, textFilter } from './redux/filters'
-import { getExpenses } from './redux/selectors'
+import { addExpense} from './redux/expenses'
+
 
 const store = newStore()
 
@@ -47,15 +46,8 @@ const e4 = store.dispatch(addExpense({
     createdAt: 1
 }))
 
-// store.dispatch(removeExpense(e1.expense.id))
-// store.dispatch(editExpense(e2.expense.id, { amount: 40 }))
-// store.dispatch(textFilter('bill'))
-// store.dispatch(sortFilter('date'))
-// store.dispatch(datetFilter(0,5))
 
 const state = store.getState()
-const expenses = getExpenses(state.expenses, state.filters)
-
 
 const jsx = (
     <Provider store={store}>

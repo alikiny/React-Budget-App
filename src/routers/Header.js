@@ -2,10 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 
 const Header = () => (
-    <div style={{backgroundColor:'#25001b',
-     padding:'10px',
-    textAlign:'center',
-    marginBottom:'10px'}}>
+    <div className='header'>
         <h1 className="app-name">Budget Management</h1>
         <div className="nav-bar">
             <NavLink to='/' activeClassName="link-active" exact={true}>Home</NavLink>
