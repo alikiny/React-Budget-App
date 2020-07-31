@@ -11,7 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import CancelIcon from '@material-ui/icons/Cancel';
 import { connect } from 'react-redux';
-import { addExpense, editExpense } from '../redux/expenses'
+import { addExpense, editExpense,startAddAction } from '../redux/expenses'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -101,7 +101,7 @@ export const ExpenseModal = (props) => {
                         {
                             description: name,
                             note,
-                            amount,
+                            amount:itemAmount,
                             createdAt: getTime
                         }
                     )
@@ -114,7 +114,7 @@ export const ExpenseModal = (props) => {
                 props.addExpense({
                     description: name,
                     note,
-                    amount,
+                    amount:itemAmount,
                     createdAt: getTime
                 })
                 console.log('added new expense')
@@ -222,7 +222,7 @@ export const ExpenseModal = (props) => {
 }
 
 const mapDispatchToProps=dispatch=>({
-    addExpense: (expense)=>dispatch(addExpense(expense)),
+    addExpense: (expense)=>dispatch(startAddAction(expense)),
     editExpense:(expense)=>dispatch(editExpense(id,expense))
 })
 

@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import App from '../containers/app';
 import newStore from './redux/expensify'
 import { addExpense} from './redux/expenses'
-
+import './firebase/firebase'
 
 const store = newStore()
 

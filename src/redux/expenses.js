@@ -1,20 +1,32 @@
 import { v4 as uuid } from 'uuid';
+import {firebase} from '../firebase/firebase'
 
-export const addExpense = ({
-    description = '',
-    note = '',
-    amount = 0,
-    createdAt = 0 } = {}) => ({
+export const addExpense = (expense) => ({
         type: 'ADD_EXPENSES',
-        expense: {
-            id: uuid(),
-            description,
-            note,
-            amount,
-            createdAt
-
-        }
+        expense
     })
+
+export const startAddAction = (expense = {}) => {
+
+    return (dispatch) => {
+        const {
+            description = '',
+            note = '',
+            amount = 0,
+            createdAt = 0
+        } = expense
+
+        const newExpense={description,note,amount,createdAt}
+        return firebase.database().ref('expenses').push(newExpense)
+        .then((ref)=>{
+            dispatch(addExpense({
+                id:ref.key,
+                ...newExpense
+            }))
+        })
+    }
+
+}
 
 export const removeExpense = (id) => ({
     type: 'REMOVE_EXPENSE',
@@ -46,10 +58,10 @@ export const expensesReducer = (state = defaultExpenses, action) => {
                 if (expense.id === action.expense.id) {
                     console.log('Editted successfully!')
                     return { ...expense, ...action.expense.update }
-                    
+
                 }
                 else {
-                    
+
                     return expense
                 }
             }
