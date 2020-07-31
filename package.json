@@ -10,6 +10,9 @@
     "start": "node server/server.js",
     "heroku-postbuild": "yarn build:prod"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "author": "",
   "license": "ISC",
   "description": "",
