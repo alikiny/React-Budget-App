@@ -5,6 +5,14 @@ import { ExpenseModal } from '../routers/ExpenseForm'
 import expenses from './expensesTest'
 import { shallow, mount } from 'enzyme'
 
+beforeEach(() => {
+    //Mock the new Date(Date.now()) function, which is used in ExpenseForm
+    jest.spyOn(global.Date, 'now').mockImplementation(() =>
+        new Date('2019-05-14T11:01:58.135Z').valueOf()
+    )
+})
+
+
 test('Render Expense Form', () => {
     const renderer = new ShallowRenderer()
     renderer.render(<ExpenseModal expenses={expenses} openModal={true} />)

@@ -40,7 +40,7 @@ export const ExpenseModal = (props) => {
     const [name, setName] = useState('')
     const [amount, setAmount] = useState('')
     const [note, setNote] = useState('')
-    const [date, setDate] = useState()
+    const [date, setDate] = useState(new Date(Date.now()))
 
     useEffect(() => {
         if (expense) {
@@ -129,7 +129,7 @@ export const ExpenseModal = (props) => {
         setName('')
         setAmount('')
         setNote('')
-        setDate(0)
+        setDate(new Date(Date.now()))
 
         
 

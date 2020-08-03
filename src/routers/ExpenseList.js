@@ -130,7 +130,7 @@ function EnhancedTable(props) {
                         <TableBody>
                             {rows.length === 0 && (
                                 <tr>
-                                    <td colspan="6">There is no expense</td>
+                                    <td colSpan="6">There is no expense</td>
                                 </tr>
                             )}
                             {rows.map((row, index) => {

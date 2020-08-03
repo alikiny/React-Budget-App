@@ -126,6 +126,7 @@ exports[`Check if text update 1`] = `
         minDateMessage="Date should not be before minimal date"
         onChange={[Function]}
         openTo="date"
+        value={2019-05-14T11:01:58.135Z}
         views={
           Array [
             "year",
@@ -287,6 +288,7 @@ exports[`Render Expense Form 1`] = `
         minDateMessage="Date should not be before minimal date"
         onChange={[Function]}
         openTo="date"
+        value={2019-05-14T11:01:58.135Z}
         views={
           Array [
             "year",
