@@ -11,7 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import CancelIcon from '@material-ui/icons/Cancel';
 import { connect } from 'react-redux';
-import { addExpense, editExpense,startAddAction } from '../redux/expenses'
+import { startEditExpense,startAddAction } from '../redux/expenses'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -96,7 +96,7 @@ export const ExpenseModal = (props) => {
                     alert('There is no change made')
                 } else {
                     console.log('edit modal')
-                    props.editExpense(
+                    props.startEditExpense(
                         toBeDeleted.id,
                         {
                             description: name,
@@ -223,7 +223,7 @@ export const ExpenseModal = (props) => {
 
 const mapDispatchToProps=dispatch=>({
     addExpense: (expense)=>dispatch(startAddAction(expense)),
-    editExpense:(expense)=>dispatch(editExpense(id,expense))
+    startEditExpense:(id,expense)=>dispatch(startEditExpense(id,expense))
 })
 
 const mapStateToProps=state=>({

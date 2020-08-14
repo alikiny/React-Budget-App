@@ -2,7 +2,8 @@
 @import './appname.scss';
 @import './header.scss';
 @import './homepage.scss';
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+@import './form.scss';
 
 body{
     background-color: #794c6c;

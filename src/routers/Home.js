@@ -1,30 +1,36 @@
 import React from 'react';
-import totalExpense from '../redux/total-expense'
-import { connect } from 'react-redux';
+import {Router, BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
+import { createBrowserHistory } from 'history';
+
+import LogIn from './LogIn'
+import SignUp from './SignUp'
+import NotFound from './404'
+import {OpenPage} from './OpenPage'
+
+export const homeHistory=createBrowserHistory()
+
+const Home = () => {
 
 
+    return (
 
-export const Home = (props) => (
-    <div className="container">
-        <div className='row'>
+        <div>
+            <Router history={homeHistory}>
+                <div>
+                    <Switch>
+                        <Route path="/" component={OpenPage} exact/>
+                        <Route path='/login' component={LogIn}></Route>
+                        <Route path='/signup' component={SignUp}></Route>
+                        <Route component={NotFound} />
+                    </Switch>
 
-            <div className="col-sm-4 bg-light">
-                This is my component Home
-            </div>
+                    
+                </div>
+            </Router>
 
-            <div className="col-sm-1"></div>
-
-            <div className="col-sm-7 bg-success">
-                <p>Total expenses: {props.expenses.length} </p>
-                <p>Sum of expenses:  {totalExpense(props.expenses)}&euro;</p>
-            </div>
 
         </div>
-    </div>
 
-)
-
-
-export default connect(state => ({
-    expenses: state.expenses
-}))(Home)
+    )
+}
+export default Home

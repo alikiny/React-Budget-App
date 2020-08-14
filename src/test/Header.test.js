@@ -1,6 +1,6 @@
 import ShallowRenderer from 'react-test-renderer/shallow'
 import React from 'react'
-import Header from '../routers/Header'
+import {Header} from '../routers/Header'
 import {shallow} from 'enzyme'
 
 // test('Header render correctly',()=>{

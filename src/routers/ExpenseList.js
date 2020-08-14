@@ -12,7 +12,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Paper from '@material-ui/core/Paper';
 import { CustomToolbar } from './TooBar'
 import { CustomTableHead } from './TableHead'
-import { removeExpense } from '../redux/expenses'
+import { startRemoveAction } from '../redux/expenses'
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
@@ -30,10 +30,10 @@ function createExpense(id, name, amount, date, note) {
 function EnhancedTable(props) {
     const rows = props.rows
     const classes = useStyles();
-    const [selected, setSelected] = React.useState([]);
-    const [page, setPage] = React.useState(0);
-    const [dense, setDense] = React.useState(false);
-    const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const [selected, setSelected] = useState([]);
+    const [page, setPage] = useState(0);
+    const [dense, setDense] =useState(false);
+    const [rowsPerPage, setRowsPerPage] =useState(5);
     const [openModal, setOpen] = useState(false)
     const [currentExpense, setExpense] = useState()
     const [isEdit, setEdit] = useState(true)
@@ -214,7 +214,7 @@ function EnhancedTable(props) {
 export const ExpenseList = (props) => {
 
     const deleteItem = (expense) => {
-        props.dispatch(removeExpense(expense.id))
+        props.dispatch(startRemoveAction(expense.id))
     }
 
     const rows = props.expenses.map((expense, index) => {

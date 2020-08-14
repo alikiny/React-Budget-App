@@ -10,39 +10,66 @@ exports[`Header render correctly 1`] = `
     Budget Management
   </h1>
   <div
-    className="nav-bar"
+    className="navbar navbar-text navbar-expand-lg"
   >
-    <NavLink
-      activeClassName="link-active"
-      exact={true}
-      to="/"
+    <ul
+      className="navbar-nav"
     >
-      Home
-    </NavLink>
-    <NavLink
-      activeClassName="link-active"
-      to="/expenses"
-    >
-      Expenses
-    </NavLink>
-    <NavLink
-      activeClassName="link-active"
-      to="/incomes"
-    >
-      Incomes
-    </NavLink>
-    <NavLink
-      activeClassName="link-active"
-      to="/transactions"
-    >
-      Transactions
-    </NavLink>
-    <NavLink
-      activeClassName="link-active"
-      to="/guides"
-    >
-      Guides
-    </NavLink>
+      <li
+        className="nav-item"
+      >
+        <NavLink
+          activeClassName="link-active"
+          className="nav-link"
+          exact="true"
+          to="/home"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <NavLink
+          activeClassName="link-active"
+          className="nav-link"
+          to="/dashboard"
+        >
+          Dashboard
+        </NavLink>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <NavLink
+          activeClassName="link-active"
+          className="nav-link"
+          to="/expenses"
+        >
+          Expenses
+        </NavLink>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <NavLink
+          activeClassName="link-active"
+          className="nav-link"
+          to="/summary"
+        >
+          Summary
+        </NavLink>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <button
+          type="button"
+        >
+          Log out
+        </button>
+      </li>
+    </ul>
   </div>
 </div>
 `;

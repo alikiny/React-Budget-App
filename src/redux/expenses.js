@@ -60,6 +60,15 @@ export const removeExpense = (id) => ({
     }
 })
 
+export const startRemoveAction=(id)=>{
+    return (dispatch)=>{
+        return firebase.database().ref(`expenses/${id}`)
+        .remove().then(()=>{
+            dispatch(removeExpense(id))
+        })
+    }
+}
+
 export const editExpense = (id, update) => ({
     type: 'EDIT_EXPENSE',
     expense: {
@@ -67,6 +76,14 @@ export const editExpense = (id, update) => ({
         update
     }
 })
+
+export const startEditExpense=(id,update)=>{
+    return (dispatch)=>{
+        return firebase.database().ref(`expenses/${id}`).update(update).then(()=>
+        dispatch(editExpense(id,update))
+        )}
+
+}
 
 
 const defaultExpenses = []
