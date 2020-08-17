@@ -1,13 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import {connect} from 'react-redux'
-import {logoutAction} from '../firebase/logOutAction'
+import { connect } from 'react-redux'
+import { logoutAction } from '../firebase/logOutAction'
 
-export const Header = ({logoutAction}) => (
+export const Header = ({ logoutAction }) => (
     <div className='header'>
-        <h1 className="app-name">Budget Management</h1>
+        <h1>
+            <NavLink to='/' className='nav-link app-name' activeClassName="link-active" exact={true}>Budget Manager</NavLink>
+        </h1>
         <div className="navbar navbar-text navbar-expand-lg">
             <ul className="navbar-nav">
+                <li className="nav-item">
+                    <NavLink to='/' className='nav-link' activeClassName="link-active" exact={true}>Home</NavLink>
+                </li>
+
                 <li className="nav-item">
                     <NavLink to='dashboard' className='nav-link' activeClassName="link-active">Dashboard</NavLink>
                 </li>
@@ -29,7 +35,7 @@ export const Header = ({logoutAction}) => (
 )
 
 
-const mapDispatchToProp=(dispatch)=>({
-    logoutAction:()=>dispatch(logoutAction())
+const mapDispatchToProp = (dispatch) => ({
+    logoutAction: () => dispatch(logoutAction())
 })
-export default connect(undefined,mapDispatchToProp)(Header)
+export default connect(undefined, mapDispatchToProp)(Header)

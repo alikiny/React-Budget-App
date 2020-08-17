@@ -18,6 +18,7 @@ exports[`Check if date update 1`] = `
       id="item-amount"
       label="Amount"
       onChange={[Function]}
+      type="number"
       value=""
       variant="outlined"
     />
@@ -100,6 +101,7 @@ exports[`Check if text update 1`] = `
       id="item-amount"
       label="Amount"
       onChange={[Function]}
+      type="number"
       value=""
       variant="outlined"
     />
@@ -181,6 +183,7 @@ exports[`Render Edit Form 1`] = `
       id="item-amount"
       label="Amount"
       onChange={[Function]}
+      type="number"
       value={50}
       variant="outlined"
     />
@@ -262,6 +265,7 @@ exports[`Render Expense Form 1`] = `
       id="item-amount"
       label="Amount"
       onChange={[Function]}
+      type="number"
       value=""
       variant="outlined"
     />

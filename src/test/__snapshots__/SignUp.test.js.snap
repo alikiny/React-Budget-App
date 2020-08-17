@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogIn page render corrently 1`] = `
+<form
+  className="form"
+>
+  <WithStyles(ForwardRef(TextField))
+    id="email"
+    label="Email"
+    onChange={[Function]}
+    value=""
+    variant="outlined"
+  />
+  <WithStyles(ForwardRef(TextField))
+    id="user-name"
+    label="User name"
+    onChange={[Function]}
+    value=""
+    variant="outlined"
+  />
+  <WithStyles(ForwardRef(TextField))
+    id="password"
+    label="Password"
+    onChange={[Function]}
+    value=""
+    variant="outlined"
+  />
+  <WithStyles(ForwardRef(TextField))
+    id="password"
+    label="Retype-password"
+    onChange={[Function]}
+    value=""
+    variant="outlined"
+  />
+  <button
+    onClick={[Function]}
+    type="submit"
+  >
+     Register 
+  </button>
+  <p>
+    Already have an account?
+    <a>
+      Log in
+    </a>
+  </p>
+</form>
+`;

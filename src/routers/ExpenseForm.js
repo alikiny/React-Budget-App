@@ -57,7 +57,7 @@ export const ExpenseModal = (props) => {
 
         const alertText = []
         const nameList = props.expenses.map((ex) => ex.description)
-        const itemAmount = parseInt(amount, 10)
+        const itemAmount = parseFloat(amount)
         const getDate = new Date(date)
         const getTime = getDate.getTime()
 
@@ -158,6 +158,7 @@ export const ExpenseModal = (props) => {
                 <TextField
                     label="Amount"
                     id='item-amount'
+                    type="number"
                     value={expense ? expense.amount : amount}
                     onChange={(e) => {
                         if (expense) { expense.amount = e.target.value }

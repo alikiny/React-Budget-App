@@ -13,6 +13,7 @@ import thunk from 'redux-thunk'
 import { firebase } from '../firebase/firebase'
 
 const createMockStore = configureMockStore([thunk])
+const uid="testuid"
 
 beforeEach((done) => {
     const expenseData = {}
@@ -20,7 +21,7 @@ beforeEach((done) => {
         expenseData[id] = { description, note, amount, createdAt }
     })
 
-    firebase.database().ref('expenses').set(expenseData).then(() => {
+    firebase.database().ref(`user/${uid}/expenses`).set(expenseData).then(() => {
         done()
     })
 })
@@ -61,7 +62,7 @@ test('Add expense to database', () => {
         amount: 550,
         createdAt: 4
     }
-    const store = createMockStore({})
+    const store = createMockStore({auth:{uid}})
     return store.dispatch(startAddAction(expense))
         .then(() => {
             const action = store.getActions()
@@ -75,7 +76,7 @@ test('Add expense to database', () => {
                 }
             )
 
-            return firebase.database().ref(`expenses/${action[0].expense.id}`).once('value')
+            return firebase.database().ref(`user/${uid}/expenses/${action[0].expense.id}`).once('value')
         }).then(snapshot => {
             expect(snapshot.val()).toEqual(expense)
         })
@@ -83,7 +84,7 @@ test('Add expense to database', () => {
 })
 
 test('Should fetch expenses from firebase', (done) => {
-    const store = createMockStore({})
+    const store = createMockStore({auth:{uid}})
     store.dispatch(setExpensesAction()).then(() => {
         const actions = store.getActions()
         console.log('fetch database')
@@ -98,7 +99,7 @@ test('Should fetch expenses from firebase', (done) => {
 })
 
 test('Should update expenses in firebase', (done) => {
-    const store = createMockStore({})
+    const store = createMockStore({auth:{uid}})
 
     const update = {
         description: 'Monthly rent',
@@ -116,7 +117,7 @@ test('Should update expenses in firebase', (done) => {
             }
         })
 
-        firebase.database().ref(`expenses/${id}`)
+        firebase.database().ref(`user/${uid}/expenses/${id}`)
             .once('value').then(snapshot => {
                 expect(snapshot.val()).toEqual({
                     description: 'Monthly rent',
@@ -130,7 +131,7 @@ test('Should update expenses in firebase', (done) => {
 })
 
 test('Should delete expenses in firebase', (done) => {
-    const store = createMockStore({})
+    const store = createMockStore({auth:{uid}})
     const id = '001'
     store.dispatch(startRemoveAction(id)).then(() => {
         const actions = store.getActions()
@@ -141,7 +142,7 @@ test('Should delete expenses in firebase', (done) => {
             }
         })
 
-        firebase.database().ref(`expenses/${id}`).once('value').then(
+        firebase.database().ref(`user/${uid}/expenses/${id}`).once('value').then(
             snapshot=>{
                 expect(snapshot.val()).toBeFalsy()
                 done()

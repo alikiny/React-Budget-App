@@ -4,10 +4,15 @@ exports[`Header render correctly 1`] = `
 <div
   className="header"
 >
-  <h1
-    className="app-name"
-  >
-    Budget Management
+  <h1>
+    <NavLink
+      activeClassName="link-active"
+      className="nav-link app-name"
+      exact={true}
+      to="/"
+    >
+      Budget Manager
+    </NavLink>
   </h1>
   <div
     className="navbar navbar-text navbar-expand-lg"
@@ -21,8 +26,8 @@ exports[`Header render correctly 1`] = `
         <NavLink
           activeClassName="link-active"
           className="nav-link"
-          exact="true"
-          to="/home"
+          exact={true}
+          to="/"
         >
           Home
         </NavLink>
@@ -33,7 +38,7 @@ exports[`Header render correctly 1`] = `
         <NavLink
           activeClassName="link-active"
           className="nav-link"
-          to="/dashboard"
+          to="dashboard"
         >
           Dashboard
         </NavLink>
@@ -44,7 +49,7 @@ exports[`Header render correctly 1`] = `
         <NavLink
           activeClassName="link-active"
           className="nav-link"
-          to="/expenses"
+          to="expenses"
         >
           Expenses
         </NavLink>
@@ -55,7 +60,7 @@ exports[`Header render correctly 1`] = `
         <NavLink
           activeClassName="link-active"
           className="nav-link"
-          to="/summary"
+          to="summary"
         >
           Summary
         </NavLink>

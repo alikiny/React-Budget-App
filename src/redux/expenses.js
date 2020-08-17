@@ -8,8 +8,9 @@ export const setExpenses = (expenses) => ({
 
 export const setExpensesAction = () => {
     const expenses = []
-    return (dispatch) => {
-        return firebase.database().ref('expenses')
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
+        return firebase.database().ref(`user/${uid}/expenses`)
             .once('value').then(snapshot => {
                 snapshot.forEach((expense) => {
                     expenses.push({
@@ -33,7 +34,7 @@ export const addExpense = (expense) => ({
 
 export const startAddAction = (expense = {}) => {
 
-    return (dispatch) => {
+    return (dispatch, getState) => {
         const {
             description = '',
             note = '',
@@ -41,8 +42,9 @@ export const startAddAction = (expense = {}) => {
             createdAt = 0
         } = expense
 
+        const uid = getState().auth.uid
         const newExpense = { description, note, amount, createdAt }
-        return firebase.database().ref('expenses').push(newExpense)
+        return firebase.database().ref(`user/${uid}/expenses`).push(newExpense)
             .then((ref) => {
                 dispatch(addExpense({
                     id: ref.key,
@@ -60,12 +62,13 @@ export const removeExpense = (id) => ({
     }
 })
 
-export const startRemoveAction=(id)=>{
-    return (dispatch)=>{
-        return firebase.database().ref(`expenses/${id}`)
-        .remove().then(()=>{
-            dispatch(removeExpense(id))
-        })
+export const startRemoveAction = (id) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
+        return firebase.database().ref(`user/${uid}/expenses/${id}`)
+            .remove().then(() => {
+                dispatch(removeExpense(id))
+            })
     }
 }
 
@@ -77,11 +80,13 @@ export const editExpense = (id, update) => ({
     }
 })
 
-export const startEditExpense=(id,update)=>{
-    return (dispatch)=>{
-        return firebase.database().ref(`expenses/${id}`).update(update).then(()=>
-        dispatch(editExpense(id,update))
-        )}
+export const startEditExpense = (id, update) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid
+        return firebase.database().ref(`user/${uid}/expenses/${id}`).update(update).then(() =>
+            dispatch(editExpense(id, update))
+        )
+    }
 
 }
 

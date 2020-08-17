@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogIn page render correctly 1`] = `
+<form
+  className="form"
+>
+  <WithStyles(ForwardRef(TextField))
+    id="user-name"
+    label="User name"
+    onChange={[Function]}
+    value=""
+    variant="outlined"
+  />
+  <WithStyles(ForwardRef(TextField))
+    id="password"
+    label="Password"
+    onChange={[Function]}
+    value=""
+    variant="outlined"
+  />
+  <button
+    id="submit-btn"
+    type="submit"
+  >
+     Log In 
+  </button>
+  <button
+    id="google-login"
+    onClick={[Function]}
+    type="button"
+  >
+    Log in with Google
+  </button>
+  <p>
+    Do not have an account?
+    <a>
+      Sign up here
+    </a>
+  </p>
+</form>
+`;
