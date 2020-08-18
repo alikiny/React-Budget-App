@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-
-
+import HomeIcon from '@material-ui/icons/Home';
+import { NavLink } from 'react-router-dom'
 
 const SignUp = ({signUpAction}) => (
     <form className="form">
@@ -44,11 +44,12 @@ const SignUp = ({signUpAction}) => (
         >
         </TextField>
 
-        <button type="submit" onClick={signUpAction}> Register </button>
+        <button className="btn btn-success" type="submit" onClick={signUpAction}> Register </button>
 
+        &nbsp;
         <p>Already have an account? 
-        <a >Log in</a></p>
-
+        <NavLink to="/login"> Log in</NavLink></p>
+        <NavLink to="/home"><HomeIcon style={{ fontSize: 40, margin:'auto', color:'black'}}/></NavLink>
     </form>
 
 )

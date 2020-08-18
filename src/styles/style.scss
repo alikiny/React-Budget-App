@@ -4,9 +4,11 @@
 @import './homepage.scss';
 @import "~bootstrap/scss/bootstrap";
 @import './form.scss';
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import './loader.scss';
 
-body{
-    background-color: #794c6c;
-    margin: 0;
-    padding: 0;
+
+body {
+    width: 100% ;
+    height: 100% ;
 }

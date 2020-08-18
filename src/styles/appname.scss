@@ -1,3 +1,16 @@
 .app-name{
-    color: darkgoldenrod;
+    color: rgb(238, 6, 207);
+    position: absolute;
+    font-family: 'Alata', sans-serif;
+}
+@media(max-width:800px){
+    .app-name{
+        color: rgb(238, 6, 207);
+        position: absolute;
+        left:50%;
+        transform: translate(-50%,-50%);
+        margin-bottom: 3vh;
+        font-family: 'Alata', sans-serif;
+        font-size: 5vh;
+    }
 }

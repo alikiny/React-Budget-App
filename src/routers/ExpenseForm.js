@@ -69,8 +69,6 @@ export const ExpenseModal = (props) => {
 
         if (name.length < 1) {
             alertText.push("Name is required")
-        } else if (!props.edit && nameList.includes(name)) {
-            alertText.push("Name is already taken")
         }
 
         //Check if there is no error, continue to add or edit expenses

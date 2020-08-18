@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { setExpensesAction } from './redux/expenses'
+import LoadingPage from './routers/LoadingPage'
 
 // main app
 import App from '../containers/app';
@@ -29,6 +30,7 @@ const renderApp = () => {
 
 const checkPath=/^\/login|\/signup$/g
 
+ReactDOM.render(<LoadingPage/>, document.getElementById('budget-app'))
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {

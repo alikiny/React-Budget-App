@@ -17,7 +17,7 @@ module.exports = (env) => {
 
   const isProduction = env === "production"
   return {
-    entry: './src/index.js',
+    entry: ['babel-polyfill','./src/index.js'],
     //entry:'./src/test/selector.test.js',
     output: {
 
@@ -82,7 +82,8 @@ module.exports = (env) => {
         'process.env.FIREBASE_API_ID': JSON.stringify(process.env.FIREBASE_API_ID),
         'process.env.FIREBASE_MEASUREMENT_ID': JSON.stringify(process.env.FIREBASE_MEASUREMENT_ID),
 
-      })
+      }),
+
     ]
   }
 }

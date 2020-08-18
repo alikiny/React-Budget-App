@@ -1,6 +1,22 @@
 .header{
-    padding: 10px;
+    padding: 3vh 2vw 3vh 2vw;
     text-align:center;
     margin-bottom: 10px;
     background-color: #25021B
+}
+
+.log-out-btn{
+
+    position: fixed;
+    font-weight: 40vw;
+    font-size: 1.5vw;
+    color:white;
+    border:none;
+    background-color: rgba(238, 6, 207,0.5);
+    border-radius: 50%;
+    height:6vw;
+    width: 6vw;
+    top:2vh;
+    right:2vw;
+    z-index: 2;
 }

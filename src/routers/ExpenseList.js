@@ -32,8 +32,8 @@ function EnhancedTable(props) {
     const classes = useStyles();
     const [selected, setSelected] = useState([]);
     const [page, setPage] = useState(0);
-    const [dense, setDense] =useState(false);
-    const [rowsPerPage, setRowsPerPage] =useState(5);
+    const [dense, setDense] = useState(false);
+    const [rowsPerPage, setRowsPerPage] = useState(5);
     const [openModal, setOpen] = useState(false)
     const [currentExpense, setExpense] = useState()
     const [isEdit, setEdit] = useState(true)
@@ -109,105 +109,108 @@ function EnhancedTable(props) {
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
     return (
-        <div className={classes.root}>
-            <ExpenseModal openModal={openModal} closeModal={closeModal} expense={currentExpense} edit={isEdit} />
-            <Paper className={classes.paper}>
-                <CustomToolbar numSelected={selected.length} classes={classes} onDelete={onDelete} />
-                <TableContainer>
-                    <Table
-                        className={classes.table}
-                        aria-labelledby="tableTitle"
-                        size={dense ? 'small' : 'medium'}
-                        aria-label="enhanced table"
-                    >
-                        <CustomTableHead
-                            classes={classes}
-                            numSelected={selected.length}
-                            onSelectAllClick={handleSelectAllClick}
-                            rowCount={rows.length}
-                        />
+   
+            <div className={classes.root}>
+                <ExpenseModal openModal={openModal} closeModal={closeModal} expense={currentExpense} edit={isEdit} />
+                <Paper className={classes.paper}>
+                    <CustomToolbar numSelected={selected.length} classes={classes} onDelete={onDelete} />
+                    <TableContainer>
+                        <Table
+                            className={classes.table}
+                            aria-labelledby="tableTitle"
+                            size={dense ? 'small' : 'medium'}
+                            aria-label="enhanced table"
+                        >
+                            <CustomTableHead
+                                classes={classes}
+                                numSelected={selected.length}
+                                onSelectAllClick={handleSelectAllClick}
+                                rowCount={rows.length}
+                            />
 
-                        <TableBody>
-                            {rows.length === 0 && (
-                                <tr>
-                                    <td colSpan="6">There is no expense</td>
-                                </tr>
-                            )}
-                            {rows.map((row, index) => {
-                                const isItemSelected = isSelected(row.name);
-                                const labelId = `enhanced-table-checkbox-${index}`;
-                                let date = new Date(row.date)
-                                const newdate = moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a")
+                            <TableBody>
+                                {rows.length === 0 && (
+                                    <tr>
+                                        <td colSpan="6">There is no expense</td>
+                                    </tr>
+                                )}
+                                {rows.map((row, index) => {
+                                    const isItemSelected = isSelected(row.name);
+                                    const labelId = `enhanced-table-checkbox-${index}`;
+                                    let date = new Date(row.date)
+                                    const newdate = moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a")
 
-                                return (
+                                    return (
 
-                                    <TableRow
-                                        hover
+                                        <TableRow
+                                            hover
 
-                                        role="checkbox"
-                                        aria-checked={isItemSelected}
-                                        tabIndex={-1}
-                                        key={index}
-                                        selected={isItemSelected}
-                                    >
+                                            role="checkbox"
+                                            aria-checked={isItemSelected}
+                                            tabIndex={-1}
+                                            key={index}
+                                            selected={isItemSelected}
+                                        >
 
-                                        <TableCell padding="checkbox">
-                                            <Checkbox
-                                                onClick={(event) => handleClick(event, row.name)}
-                                                checked={isItemSelected}
-                                                inputProps={{ 'aria-labelledby': labelId }}
-                                            />
-                                        </TableCell>
-                                        <TableCell component="th" id={labelId} scope="row" padding="none">
-                                            {row.name}
-                                        </TableCell>
-    
-                                        <TableCell align="left">{numeral(row.amount).format('$0,0.00')}</TableCell>
-                                        <TableCell align="left">{newdate}</TableCell>
-                                        <TableCell align="left">{row.note}</TableCell>
-                                        <TableCell align="left" onClick={
-                                            () => {
-                                                setExpense(row)
-                                                setOpen(true)
-                                            }
-                                        }>Edit</TableCell>
+                                            <TableCell padding="checkbox">
+                                                <Checkbox
+                                                    onClick={(event) => handleClick(event, row.name)}
+                                                    checked={isItemSelected}
+                                                    inputProps={{ 'aria-labelledby': labelId }}
+                                                />
+                                            </TableCell>
+                                            <TableCell component="th" id={labelId} scope="row" padding="none">
+                                                {row.name}
+                                            </TableCell>
+
+                                            <TableCell align="left">{numeral(row.amount).format('$0,0.00')}</TableCell>
+                                            <TableCell align="left">{newdate}</TableCell>
+                                            <TableCell align="left">{row.note}</TableCell>
+                                            <TableCell align="left" onClick={
+                                                () => {
+                                                    setExpense(row)
+                                                    setOpen(true)
+                                                }
+                                            }>Edit</TableCell>
+                                        </TableRow>
+                                    );
+                                })}
+                                {emptyRows > 0 && (
+
+
+                                    <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
+                                        <TableCell colSpan={6} />
                                     </TableRow>
-                                );
-                            })}
-                            {emptyRows > 0 && (
-
-
-                                <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
-                                    <TableCell colSpan={6} />
-                                </TableRow>
 
 
 
-                            )}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-                <TablePagination
-                    rowsPerPageOptions={[5, 10, 25]}
-                    component="div"
-                    count={rows.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    onChangePage={handleChangePage}
-                    onChangeRowsPerPage={handleChangeRowsPerPage}
-                />
-            </Paper>
+                                )}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                    <TablePagination
+                        rowsPerPageOptions={[5, 10, 25]}
+                        component="div"
+                        count={rows.length}
+                        rowsPerPage={rowsPerPage}
+                        page={page}
+                        onChangePage={handleChangePage}
+                        onChangeRowsPerPage={handleChangeRowsPerPage}
+                    />
+                </Paper>
 
 
 
-            <Tooltip title='Back to top' style={styles.backToTop}>
-                <IconButton onClick={() => window.scroll(0, 0)}>
-                    <ArrowUpwardIcon />
-                </IconButton>
-            </Tooltip>
+                <Tooltip title='Back to top' style={styles.backToTop}>
+                    <IconButton onClick={() => window.scroll(0, 0)}>
+                        <ArrowUpwardIcon />
+                    </IconButton>
+                </Tooltip>
 
 
-        </div>
+            </div>
+
+
     );
 }
 
@@ -254,11 +257,12 @@ const styles = {
 
 const useStyles = makeStyles((theme) => ({
     root: {
+
         width: '100%',
     },
     paper: {
         width: '100%',
-        marginBottom: theme.spacing(2),
+        
     },
     table: {
         minWidth: 750,
