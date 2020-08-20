@@ -1,4 +1,3 @@
-import { v4 as uuid } from 'uuid';
 import { firebase } from '../firebase/firebase'
 
 export const setExpenses = (expenses) => ({

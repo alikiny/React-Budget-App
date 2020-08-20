@@ -61,5 +61,6 @@ export const Summary = ({ expenses }) => {
 export default connect((state) => {
     return {
         expenses: getExpenses(state.expenses, state.filters),
+        incomes: state.incomes
     }
 })(Summary)

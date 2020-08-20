@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { setExpensesAction } from './redux/expenses'
 import LoadingPage from './routers/LoadingPage'
+import {setAccountAction} from './redux/saving'
+import {setIcomesAction} from './redux/income'
 
 // main app
 import App from '../containers/app';
@@ -36,7 +38,10 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         console.log(user.uid)
         store.dispatch(login(user.uid))
-        store.dispatch(setExpensesAction()).then(() => {
+        store.dispatch(setAccountAction())
+        .then(()=>store.dispatch(setExpensesAction()))
+        .then(()=>store.dispatch(setIcomesAction()))
+        .then(() => {
             renderApp()
             if (history.location.pathname === '/login') {
                 history.push('/dashboard')

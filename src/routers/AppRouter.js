@@ -11,6 +11,7 @@ import NotFound from './404'
 import Home from './Home'
 import LogIn from './LogIn'
 import SignUp from './SignUp'
+import Income from './Income'
 
 /* make sure history version compatible with react-router-dom version. Here useing 
 history v4 and react-router-dom v5 */
@@ -28,11 +29,13 @@ const AppRouter = () => {
             <Router history={history}>
                 <div>
                     <Switch>
+
                         <Route path='/' component={Home} exact={true} />
                         <PublicRoute path='/login' component={LogIn} />
                         <Route path='/signup' component={SignUp} />
                         <PrivateRoute path='/dashboard' component={Dashboard} />
                         <PrivateRoute path="/expenses" component={Expenses} />
+                        <PrivateRoute path="/incomes" component={Income} />
                         <PrivateRoute path="/dashboard" component={Dashboard}/>
                         <PrivateRoute path="/summary" component={Summary} />
                         <PrivateRoute component={NotFound} />

@@ -28,6 +28,10 @@ export const Header = ({ logoutAction }) => (
                 </li>
 
                 <li className="nav-item">
+                    <NavLink to='incomes' className='nav-link' activeClassName="link-active">Income</NavLink>
+                </li>
+
+                <li className="nav-item">
                     <NavLink to='summary' className='nav-link' activeClassName="link-active">Summary</NavLink>
                 </li>
 

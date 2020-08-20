@@ -35,10 +35,10 @@ export const Dashboard = (props) => {
     }
 
     return (
-        <div className="container-fluid mt-5">
+        <div className="container mt-5">
             <div className='row'>
 
-                <div className="col-sm-4">
+                <div className="col-sm-4 border-right">
                     <ul className="list-group list-group-flush">
                         <li 
                         className="navigataion-bar list-group-item"
