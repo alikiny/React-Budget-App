@@ -7,7 +7,7 @@ const SettingInfo = () => {
 
     const user = firebase.auth().currentUser
     const [name,setName]=useState(user.displayName)
-    const [photo,setPhoto]=useState(user.photoURL)
+    const [photo,setPhoto]=useState(user.photoURL?user.photoURL:"")
     
     const onSaveChange = (e) => {
         e.preventDefault()

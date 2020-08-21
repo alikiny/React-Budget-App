@@ -7,14 +7,12 @@ import moment from 'moment'
 
 
 
-//filter new associate array with grouped values of the same day
-
-
 export const Summary = ({ expenses }) => {
     let data = []
     let associateData = []
     let filteredArray = []
 
+    //filter new associate array with grouped values of the same day
     const startFilter = (dataSet) => {
 
         dataSet.forEach(d => {

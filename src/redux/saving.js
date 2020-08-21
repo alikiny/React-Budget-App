@@ -39,8 +39,8 @@ export const setAccountAction = () => {
             .once('value')
             .then(snapshot => {
                 dispatch(setAccount(
-                    snapshot.val().goal? snapshot.val().goal : 0,
-                    snapshot.val().actual? snapshot.val().actual : 0
+                    snapshot.val()? snapshot.val().goal : 0,
+                    snapshot.val()? snapshot.val().actual : 0
                 )
                 )
             })

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { setExpensesAction } from './redux/expenses'
 import LoadingPage from './routers/LoadingPage'
-import {setAccountAction} from './redux/saving'
-import {setIcomesAction} from './redux/income'
+import { setAccountAction } from './redux/saving'
+import { setIcomesAction } from './redux/income'
 
 // main app
 import App from '../containers/app';
@@ -30,32 +30,32 @@ const renderApp = () => {
     }
 }
 
-const checkPath=/^\/login|\/signup$/g
+const checkPath = /^\/login|\/signup$/g
 
-ReactDOM.render(<LoadingPage/>, document.getElementById('budget-app'))
+ReactDOM.render(<LoadingPage />, document.getElementById('budget-app'))
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        console.log(user.uid)
+        
         store.dispatch(login(user.uid))
         store.dispatch(setAccountAction())
-        .then(()=>store.dispatch(setExpensesAction()))
-        .then(()=>store.dispatch(setIcomesAction()))
-        .then(() => {
-            renderApp()
-            if (history.location.pathname === '/login') {
-                history.push('/dashboard')
-            }
-        })
+            .then(() => store.dispatch(setExpensesAction()))
+            .then(() => store.dispatch(setIcomesAction()))
+            .then(() => {
+                renderApp()
+                if (history.location.pathname === '/login') {
+                    history.push('/dashboard')
+                }
+            })
     } else {
         store.dispatch(logout())
         renderApp()
-        if(!checkPath.test(history.location.pathname)){
+        if (!checkPath.test(history.location.pathname)) {
             console.log(history.location.pathname.match(checkPath))
             history.push('/')
         }
 
-        
+
     }
 
 })
